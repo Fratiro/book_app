@@ -63,8 +63,9 @@ flutter:
   fonts:
     - family: GT Sectra Fine
       fonts:
-        - asset: Assets/Fonts
-  #
+        - asset: Assets/Fonts/GT Sectra Fine Regular.ttf
+   
+         
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
