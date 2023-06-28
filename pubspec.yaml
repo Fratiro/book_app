@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.5
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -63,7 +64,7 @@ flutter:
   #   - family: GT Sectra
   #     fonts:
   #       - asset: Assets/Fonts
-  #       
+  #
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
