@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'card_item_list_view.dart';
 import 'custom_appbar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -8,7 +9,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      children: [CustomAppBar()],
+      children: [CustomAppBar(), BookCardItemInListView()],
     );
   }
 }
