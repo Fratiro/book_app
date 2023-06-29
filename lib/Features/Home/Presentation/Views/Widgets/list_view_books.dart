@@ -21,7 +21,8 @@ class FuturedBooksListView extends StatelessWidget {
                 child: BookCardItemInListView(),
               );
             },
-          )),
+          ),
+          ),
     );
   }
 }
