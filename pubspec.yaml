@@ -31,7 +31,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  get: ^4.6.5
+  
+  go_router: ^9.0.0
   google_fonts: ^5.1.0
 
 dev_dependencies:
@@ -64,8 +65,5 @@ flutter:
     - family: GT Sectra Fine
       fonts:
         - asset: Assets/Fonts/GT Sectra Fine Regular.ttf
-   
-         
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

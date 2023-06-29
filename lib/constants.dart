@@ -8,3 +8,5 @@ const kTransitionSpeed = Duration(milliseconds: 250);
 
 //? Fonts
 const kFontGTSecrat = "GT Sectra Fine";
+
+

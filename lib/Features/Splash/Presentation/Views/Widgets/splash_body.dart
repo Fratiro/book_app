@@ -1,9 +1,9 @@
+import 'package:book_app/Core/Utilities/app_routers.dart';
 import 'package:book_app/Core/Utilities/assets.dart';
 import 'package:book_app/Features/Home/Presentation/Views/home_view.dart';
 import 'package:book_app/Features/Splash/Presentation/Views/Widgets/sliding_text.dart';
-import 'package:book_app/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({Key? key}) : super(key: key);
@@ -66,9 +66,11 @@ class _SplashBodyState extends State<SplashBody>
 
   // Navigate To Home
   void transitionToHome() {
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const HomaView(),
-          transition: Transition.zoom, duration: kTransitionSpeed);
-    });
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        GoRouter.of(context).push(AppRouters.kRouteHomeView);
+      },
+    );
   }
 }
