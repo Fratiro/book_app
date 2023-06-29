@@ -1,6 +1,5 @@
 import 'package:book_app/Core/Utilities/app_routers.dart';
 import 'package:book_app/Core/Utilities/assets.dart';
-import 'package:book_app/Features/Home/Presentation/Views/home_view.dart';
 import 'package:book_app/Features/Splash/Presentation/Views/Widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
