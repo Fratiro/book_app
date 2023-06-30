@@ -18,5 +18,3 @@ class SectionTwo extends StatelessWidget {
     );
   }
 }
-
-
