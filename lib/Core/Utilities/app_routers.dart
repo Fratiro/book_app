@@ -1,5 +1,6 @@
 import 'package:book_app/Features/Home/Presentation/Views/book_details_view.dart';
 import 'package:book_app/Features/Home/Presentation/Views/home_view.dart';
+import 'package:book_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:go_router/go_router.dart';
 import '../../Features/Splash/Presentation/Views/splash_view.dart';
 
@@ -8,6 +9,7 @@ abstract class AppRouters {
   static const kRouteSplashView = "/";
   static const kRouteHomeView = "/HomeView";
   static const kRouteBookDetailsView = "/BookDetailsView";
+  static const kRouteSearchView = "/SearchView";
 
 //? GoRouter configuration
   static final router = GoRouter(
@@ -23,6 +25,10 @@ abstract class AppRouters {
       GoRoute(
         path: kRouteBookDetailsView,
         builder: (context, state) => const BookDetailsView(),
+      ),
+      GoRoute(
+        path: kRouteSearchView,
+        builder: (context, state) => const SearchView(),
       ),
     ],
   );

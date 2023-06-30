@@ -12,71 +12,67 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: GestureDetector(
-        onTap: () {
-          GoRouter.of(context).push(AppRouters.kRouteBookDetailsView);
-        },
-        child: SizedBox(
-          height: 124,
-          child: Row(
-            children: [
-              AspectRatio(
-                aspectRatio: 1.3 / 2,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(8)),
-                  child: Image.asset(
-                    ProjectAssets.testImage,
-                    fit: BoxFit.fill,
-                  ),
+    return GestureDetector(
+      onTap: () {
+        GoRouter.of(context).push(AppRouters.kRouteBookDetailsView);
+      },
+      child: SizedBox(
+        height: 124,
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 1.3 / 2,
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.red, borderRadius: BorderRadius.circular(8)),
+                child: Image.asset(
+                  ProjectAssets.testImage,
+                  fit: BoxFit.fill,
                 ),
               ),
-              const SizedBox(width: 30),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
+            ),
+            const SizedBox(width: 30),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    child: Text(
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      "Hello World this is test about Text spacing ",
+                      style: Styles.textStyle20
+                          .copyWith(fontFamily: kFontGTSecrat),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        "Hello World this is test about Text spacing ",
+                        "JR Rowling",
+                        style: Styles.textStyle14
+                            .copyWith(color: Colors.white.withOpacity(0.7)),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        r"$ 19.99",
                         style: Styles.textStyle20
-                            .copyWith(fontFamily: kFontGTSecrat),
+                            .copyWith(fontWeight: FontWeight.w900),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        child: Text(
-                          "JR Rowling",
-                          style: Styles.textStyle14
-                              .copyWith(color: Colors.white.withOpacity(0.7)),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          r"$ 19.99",
-                          style: Styles.textStyle20
-                              .copyWith(fontWeight: FontWeight.w900),
-                        ),
-                        const RatingWidget()
-                      ],
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                      const RatingWidget()
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
