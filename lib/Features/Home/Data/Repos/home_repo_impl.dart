@@ -2,6 +2,7 @@ import 'package:book_app/Core/Errors/failures.dart';
 import 'package:book_app/Features/Home/Data/Model/book_model/book_model.dart';
 import 'package:book_app/Features/Home/Data/Repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 import '../../../../Core/Utilities/api_service.dart';
 
@@ -23,7 +24,10 @@ class HomeRepoImple implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
