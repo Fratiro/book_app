@@ -2,14 +2,14 @@ import 'package:equatable/equatable.dart';
 
 class RentalDuration extends Equatable {
   final String? unit;
-  final int? count;
+  final num? count;
 
   const RentalDuration({this.unit, this.count});
 
   factory RentalDuration.fromJson(Map<String, dynamic> json) {
     return RentalDuration(
       unit: json['unit'] as String?,
-      count: json['count'] as int?,
+      count: json['count'] as num?,
     );
   }
 

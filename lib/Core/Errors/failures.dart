@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
 
 abstract class Failure {
-  final String errorMessage;
+  final String message;
 
-  const Failure(this.errorMessage);
+  const Failure(this.message);
 }
 
 class ServerFailure extends Failure {
-  ServerFailure(super.errorMessage);
+  ServerFailure(super.message);
 
-  factory ServerFailure.fromDioError(DioException dioError) {
-    switch (dioError.type) {
+  factory ServerFailure.fromDioException(DioException ex) {
+    switch (ex.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure('Connection timeout with ApiServer');
 
@@ -22,13 +22,13 @@ class ServerFailure extends Failure {
 
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
-            dioError.response!.statusCode, dioError.response!.data);
-            
+            ex.response!.statusCode, ex.response!.data);
+
       case DioExceptionType.cancel:
         return ServerFailure('Request to ApiServer was canceld');
 
       case DioExceptionType.unknown:
-        if (dioError.message!.contains("SocketException")) {
+        if (ex.message!.contains("SocketException")) {
           return ServerFailure('No Internet Connection');
         }
         return ServerFailure('Unexpected Error, Please try again!');

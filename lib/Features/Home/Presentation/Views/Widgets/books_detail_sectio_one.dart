@@ -15,7 +15,7 @@ class SectionOne extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.2, vertical: 16),
-          child: const BookCardItemInListView(),
+          child: const BookCardItemInListView(image: ""),
         ),
         Text(
           "Book Name Here",

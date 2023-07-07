@@ -1,3 +1,4 @@
+import 'package:book_app/Features/Home/Domain/Entities/book_entity.dart';
 import 'package:equatable/equatable.dart';
 
 import 'access_info.dart';
@@ -5,7 +6,7 @@ import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
-class BookModel extends Equatable {
+class BookModel extends BookEntity {
   final String? kind;
   final String? id;
   final String? etag;
@@ -15,7 +16,7 @@ class BookModel extends Equatable {
   final AccessInfo? accessInfo;
   final SearchInfo? searchInfo;
 
-  const BookModel({
+  BookModel({
     this.kind,
     this.id,
     this.etag,
@@ -24,7 +25,14 @@ class BookModel extends Equatable {
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
-  });
+  }) : super(
+            bookId: id!,
+            image: volumeInfo!.imageLinks?.thumbnail ?? "",
+            title: volumeInfo.title!,
+            authorName: volumeInfo.authors!.first,
+            price: 0.0,
+            rating: volumeInfo.pageCount,
+            ratingTotal: volumeInfo.pageCount);
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,

@@ -1,8 +1,11 @@
+import 'package:book_app/Features/Home/Domain/Entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'card_item_list_view.dart';
 
 class FuturedBooksListView extends StatelessWidget {
-  const FuturedBooksListView({super.key});
+  const FuturedBooksListView({super.key, required this.books});
+
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +17,11 @@ class FuturedBooksListView extends StatelessWidget {
           itemCount: 5,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              child: BookCardItemInListView(),
+            return  Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: BookCardItemInListView(
+                image: books[index].image ?? "",
+              ),
             );
           },
         ),

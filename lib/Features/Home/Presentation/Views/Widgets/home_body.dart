@@ -2,7 +2,7 @@ import 'package:book_app/Core/Utilities/styles.dart';
 import 'package:flutter/material.dart';
 import 'best_seller_list_view.dart';
 import 'custom_appbar.dart';
-import 'list_view_books.dart';
+import 'featured_books_listview_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -16,7 +16,7 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
-              FuturedBooksListView(),
+              FuturedBooksListViewBlocBuilder(),
               SizedBox(height: 40),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24),

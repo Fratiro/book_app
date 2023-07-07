@@ -5,7 +5,7 @@ import 'rental_duration.dart';
 import 'retail_price.dart';
 
 class Offer extends Equatable {
-  final int? finskyOfferType;
+  final num? finskyOfferType;
   final ListPrice? listPrice;
   final RetailPrice? retailPrice;
   final bool? giftable;
@@ -20,7 +20,7 @@ class Offer extends Equatable {
   });
 
   factory Offer.fromJson(Map<String, dynamic> json) => Offer(
-        finskyOfferType: json['finskyOfferType'] as int?,
+        finskyOfferType: json['finskyOfferType'] as num?,
         listPrice: json['listPrice'] == null
             ? null
             : ListPrice.fromJson(json['listPrice'] as Map<String, dynamic>),

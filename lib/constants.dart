@@ -8,3 +8,7 @@ const kTransitionSpeed = Duration(milliseconds: 250);
 
 //? Fonts
 const kFontGTSecrat = "GT Sectra Fine";
+
+//? Hive
+const kHivefeaturedBoxName = "featuredBox";
+const kHiveNewestBoxName = "newestBox";
